@@ -1,0 +1,45 @@
+  
+  <h1 *ngIf="editMode == false">Add Item</h1>
+  <h1 *ngIf="editMode == true">Edit Iem</h1>
+  <br><br>
+  
+<form [formGroup]="form" (ngSubmit)="onsubmit()">
+  <div class="mb-3">
+    <label for="id" class="form-label">#ID</label>
+    <input type="email" class="form-control" id="id" formControlName="id">
+  </div>
+
+  <div class="mb-3">
+    <label for="Name" class="form-label">Name</label>
+    <input type="email" class="form-control" id="Name" formControlName="name">
+  </div>
+  
+  <div class="mb-3">
+    <label for="brand" class="form-label">Brand</label>
+    <input type="email" class="form-control" id="brand" formControlName="brand">
+  </div>
+
+  <div class="mb-3">
+    <label for="color" class="form-label">Color</label>
+    <input type="email" class="form-control" id="color" formControlName="color">
+  </div>
+
+  <div class="mb-3">
+    <label for="color" class="form-label">Price</label>
+    <input type="email" class="form-control" id="color" formControlName="price">
+  </div>
+
+  <div class="mb-3">
+    <label for="color" class="form-label">Image</label>
+    <input type="email" class="form-control" id="color" formControlName="image">
+  </div>
+
+  <div class="mb-3">
+    <label for="color" class="form-label">Status</label>
+    <input type="email" class="form-control" id="color" formControlName="status">
+  </div>
+
+  <button class="btn btn-primary" [disabled]="form.invalid">Submit</button> |
+  <button class="btn btn-danger" routerLink="/home">Cancel</button>
+</form>
+<br><br><br><br>
