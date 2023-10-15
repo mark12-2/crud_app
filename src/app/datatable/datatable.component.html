@@ -1,14 +1,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-    <table class="table" style="width: 1200px;">
+    <table class="table" style="width: 1300px;">
 
 <thead>
       <tr>
-        <th scope="col">#ID</th>
+        <th scope="col" style="padding-right: 170px;">#ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Brand</th>
         <th scope="col">Color</th>
+        <th scope="col">Brand</th>
         <th scope="col">Price</th>
         <th scope="col">Image</th>
         <th scope="col">Status</th>
@@ -20,11 +20,12 @@
 </table>
 
 </div>
-</div>
-</div>
 
-  <app-data *ngFor = "let data of dataLists; let i = index"
-    [data]="data"
-    [index]="i"
- ></app-data>
- <br><br>
+<app-data *ngFor = "let data of dataLists; let i = index"
+[data]="data"
+[index]="i"
+></app-data>
+<br><br>
+
+</div>
+</div>

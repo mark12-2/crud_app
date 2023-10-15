@@ -6,7 +6,7 @@ import { Data } from './data.model';
 })
 export class DataService {
     dataLists: Data[]=[
-        new Data( "" , "Sapatos", "Palladium",
+        new Data( crypto.randomUUID() , "Sapatos", "Palladium",
          "Navy Blue", "P 20000", "https://th.bing.com/th/id/OIP.VJvFqRmLtSQB1O0oWerdZAHaEF?w=313&h=180&c=7&r=0&o=5&pid=1.7",
           "Availabable")
     ];

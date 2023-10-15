@@ -11,7 +11,9 @@ import { Data } from '../data.model';
 })
 export class DataEditComponent {
   form!: FormGroup;
-  index: number = 0;
+  index: number = 0
+  brands = [{'id':1, 'brand':'Niek'}, {'id':2, 'brand': 'Adids'}, {'id':3, 'brand': 'Conversion'}];
+  statuss = [{'id':1, 'status':'Out of Stock'}, {'id':2, 'status': 'Available'}, {'id':3, 'status': 'Soon'}];
   editMode = false;
   
   constructor(private dataService: DataService, private router: Router,
@@ -19,7 +21,7 @@ export class DataEditComponent {
 
   ngOnInit(): void{
 
-let editId = '';
+// let editId = '';
 let editname = "";
 let editbrand = "";
 let editcolor = "";
@@ -34,7 +36,7 @@ let editstatus = "";
          
           const data = this.dataService.getSpecPost(this.index);
 
-          editId = data.id;
+          // editId = data.id;
           editname = data.name;
           editbrand = data.brand;
           editcolor = data.color;
@@ -51,7 +53,7 @@ let editstatus = "";
       
     this.form = new FormGroup({
       
-      id: new FormControl(editId,[Validators.required]),
+      // id: new FormControl(editId,[Validators.required]),
       name: new FormControl(editname, [Validators.required]),
       color: new FormControl(editcolor, [Validators.required]),
       brand: new FormControl(editbrand, [Validators.required]),
@@ -66,7 +68,7 @@ let editstatus = "";
   //submit function on creating 
     onsubmit(){
       
-      const id = this.form.value.id;
+      const id = crypto.randomUUID();
       const name = this.form.value.name;
       const color = this.form.value.color;
       const brand = this.form.value.brand;

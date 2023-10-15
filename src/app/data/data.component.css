@@ -1,0 +1,18 @@
+.red{
+    background-color: red;
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+}
+.green{
+    background-color: green;
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+}
+.yello{
+    background-color: rgb(255, 242, 0);
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+}

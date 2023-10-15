@@ -4,19 +4,21 @@
   <br><br>
   
 <form [formGroup]="form" (ngSubmit)="onsubmit()">
-  <div class="mb-3">
+  <!-- <div class="mb-3">
     <label for="id" class="form-label">#ID</label>
     <input type="email" class="form-control" id="id" formControlName="id">
-  </div>
+  </div> -->
 
   <div class="mb-3">
     <label for="Name" class="form-label">Name</label>
     <input type="email" class="form-control" id="Name" formControlName="name">
   </div>
   
-  <div class="mb-3">
+  <div class="mb-2">
     <label for="brand" class="form-label">Brand</label>
-    <input type="email" class="form-control" id="brand" formControlName="brand">
+    <select type="email" class="form-control" id="brand" formControlName="brand">
+      <option *ngFor="let brnd of brands" [value]="brnd.brand">{{brnd.brand}}</option>
+    </select>
   </div>
 
   <div class="mb-3">
@@ -32,12 +34,15 @@
   <div class="mb-3">
     <label for="color" class="form-label">Image</label>
     <input type="email" class="form-control" id="color" formControlName="image">
+    <img src="{{form.value.image}}" class="img-responsive" style="width: 150px; height: 135;">
   </div>
 
-  <div class="mb-3">
-    <label for="color" class="form-label">Status</label>
-    <input type="email" class="form-control" id="color" formControlName="status">
-  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <select class="form-control" id="status" formControlName="status">
+      <option *ngFor="let s of statuss" [value]="s.status">{{s.status}}</option>
+    </select>
+  </div><br><br>
 
   <button class="btn btn-primary" [disabled]="form.invalid">Submit</button> |
   <button class="btn btn-danger" routerLink="/home">Cancel</button>
